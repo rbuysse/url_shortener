@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+	<!-- stylesheet should be a url_for() thing so figure that out. --> 
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+</head>
+<body >
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+	    <ul class=flashes>
+	    {% for message in messages %}
+	      <li>{{ message }}</li>
+	    {% endfor %}
+	    </ul>
+	  {% endif %}
+	{% endwith %}
+	{% block body %}{% endblock %}
+	<div class="header">
+	</div>
+	<div class="content">
+		{% block content %}{% endblock %}
+	</div>
+</body>

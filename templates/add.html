@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+	<form action="{{ url_for('add') }}" method=post>
+		<input type=text name=dest_url placeholder="URL to shorten?"><br>
+		<input type=text name=ccode placeholder="Custom short url?"><br>
+		<input type="submit" value="Submit">
+	</form>
+{% endblock %}
